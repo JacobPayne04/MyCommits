@@ -22,6 +22,7 @@ class BSTNode {
       this.left = null;
       /** @type {BSTNode|null} */
       this.right = null;
+      
     }
   }
   
