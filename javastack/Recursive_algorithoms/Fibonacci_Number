@@ -1,0 +1,20 @@
+//Fibonacci Number - base case of 0,1 then a and b are at n and n+1 and n and n+1 are added to get the next number then increment one forwarard and add ect
+
+
+
+// Function to find the nth Fibonacci number
+function find_fibonacci(n) {
+    // Calling the fibonacci function with initial values
+    return fibonacci(0, 1, n);
+}
+
+// Recursive function to calculate the nth Fibonacci number
+function fibonacci(a, b, n) {
+    // Base case: if n is 0, return the current Fibonacci number (a)
+    if (n === 0) {
+        return a;
+    }
+    // Recursive call: compute the next Fibonacci number using the previous two numbers (a and b)
+    // and decrement n for the next iteration
+    return fibonacci(b, a + b, n - 1);
+}
