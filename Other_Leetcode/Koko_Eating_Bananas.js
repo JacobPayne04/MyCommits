@@ -26,3 +26,34 @@ function minEatingSpeed(piles, H) {
     return l;
   }
   
+  // second solution 
+
+  /**
+ * @param {number[]} piles
+ * @param {number} h
+ * @return {number}
+ */
+var minEatingSpeed = function(piles, h) {
+  let l = 1
+  let r = Math.max(...piles)
+  let res = r
+   
+   while(l <= r){
+     const mid = Math.floor((l+r)/2)//getting midopoint
+ 
+     let time = 0
+ 
+     for(let p of piles){
+         time += Math.ceil(p/mid)//getting hours by have the pile amount / our midpoint guess
+     }
+     if(time <= h){//if time is less then hours we can try lower
+     res = mid
+     r = mid - 1
+     } else {//but if its greater then we need to eat more
+     l = mid + 1
+     }
+   }
+ 
+ return res
+ 
+ };
