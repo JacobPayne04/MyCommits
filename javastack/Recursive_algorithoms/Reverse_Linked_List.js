@@ -37,3 +37,19 @@ var reverseList = function (h) {
     return dfs(h)
   };
   v
+
+
+  // another solution 
+  var reverseList = function (h) {
+    let prev = null
+    let curr = h
+    let next = null
+    while (curr) {
+        next = curr.next
+        curr.next = prev
+
+        prev = curr
+        curr = next
+    }
+    return prev
+};
