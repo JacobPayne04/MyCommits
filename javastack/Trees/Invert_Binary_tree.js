@@ -32,3 +32,18 @@ var invertTree = function(root) {
 
 
 root = [4,2,7,1,3,6,9]
+
+
+//second
+var invertTree = function(root){
+    if(root == null) return root
+   
+    invertTree(root.left)//go all the way left
+    invertTree(root.right)//all the way right
+   
+  //count depth + 1 for root
+   let cur = root.left
+   root.left = root.right
+   root.right = cur
+   return root//swapping
+   };
