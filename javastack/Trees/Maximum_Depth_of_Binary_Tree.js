@@ -33,3 +33,40 @@ var maxDepth = function(root) {
     // Return the maximum depth
     return ans;
 };
+
+
+//same solution but was completed #2
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+    let ans = 0
+    
+    
+    function dfs(node){
+        if(node === null) return 0
+    
+    
+        let left = dfs(node.left)
+        let right = dfs(node.right)
+        
+        ans = Math.max(ans,1 + Math.max(left,right))
+    
+        return 1 + Math.max(left, right)
+    
+    }
+    dfs(root)
+    
+    return ans
+    
+    
+    };
